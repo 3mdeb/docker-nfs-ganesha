@@ -1,7 +1,7 @@
 FROM centos:7
 
 # Install dependencies
-RUN yum install -y epel-release.noarch centos-release-gluster37.noarch && \
+RUN yum install -y epel-release.noarch centos-release-gluster7.noarch && \
     rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 && \
     rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage && \
     yum -y install \
