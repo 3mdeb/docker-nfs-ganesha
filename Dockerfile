@@ -1,9 +1,10 @@
 FROM centos:7
 
 # Install dependencies
-RUN yum install -y epel-release.noarch centos-release-gluster7.noarch && \
+RUN yum install -y epel-release.noarch centos-release-gluster7.noarch centos-release-nfs-ganesha30.noarch && \
     rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 && \
     rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage && \
+    yum -y update && \
     yum -y install \
     nfs-ganesha nfs-ganesha-xfs nfs-ganesha-vfs \
     nfs-utils rpcbind dbus && \
