@@ -1,5 +1,4 @@
 FROM centos:7
-MAINTAINER jan@rancher.com
 
 # Install dependencies
 RUN yum install -y epel-release.noarch centos-release-gluster37.noarch && \
@@ -12,7 +11,7 @@ RUN yum install -y epel-release.noarch centos-release-gluster37.noarch && \
     yum -y clean all
 
 # Add Tini
-ENV TINI_VERSION v0.16.1
+ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini.asc /tini.asc
 RUN set -x \
